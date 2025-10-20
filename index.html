@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solar Quiz</title>
+<link rel="stylesheet" href="styleSheets/styleSheet.css" />
+</head>
+<body>
+  <noscript>
+    <style>
+      .no-js-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem;
+      }
+    </style>
+    <div class="no-js-overlay">
+      Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
+    </div>
+  </noscript>
+  <div class="star"></div>
+  <div class="container">
+    <img src="assets/img/solarQuizAW.png" alt="Logo" class="logo" />
+
+    <section id="menu">
+      <h1>Desafie-se a responder as 100 maiores perguntas do Universo!</h1>
+      <button class="menu-button" id="play-btn">JOGAR</button>
+      <button class="menu-button" id="quest-btn">PERGUNTAS</button>
+      <button class="menu-button" id="about-btn">SOBRE</button>
+    </section>
+
+    <section id="questions-menu" style="display:none; text-align:center; margin-top:2rem;">
+      <button class="menu-button" id="1-5">1º ao 5º ano.</button>
+      <button class="menu-button" id="6-7">6º e 7º ano.</button>
+      <button class="menu-button" id="8-9">8º e 9º ano.</button>
+    </section>
+
+    <section id="quiz-container">
+      <div id="quiz-header">
+        <span><span id="current-question">1</span> / <span id="total-questions"></span></span>
+        <span id="timer">30s</span>
+      </div>
+      <div id="question-container"></div>
+      <div id="options-container"></div>
+      <button id="next-btn" disabled>
+        Próxima questão
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+          stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+      <div id="fun-fact" style="display:none;"></div>
+      <div class="quiz-actions">
+        <b><span class="skip">Pular Questão</span></b>
+        <b><span class="give-up">Desistir</span></b>
+      </div>
+    </section>
+
+    <section id="about" style="display:none; text-align:center; margin-top:2rem;">
+      <h2>Sobre SolarQuiz.</h2>
+      <p>SolarQuiz é um quiz simples para TODAS as idades (De preferência, para o Fundamental 2.), criado como um Trabalho na escola do criador. (A próposito, sou eu :D). <br><br>
+         Sendo assim, SolarQuiz é simples, intuitivo, é criado com o próposito de aprendizado, não espere muito muito dele.. <br><br>
+         Se você é um programador (como eu), você deveria dar uma olhada no Source Code (Codigo Fonte) desse jogo, você vai gostar. (Ou não, por que é extremamente mal programado) <br><br>
+         A redestribuição do binario desse jogo ou o codigo fonte do mesmo com fins lucrativos ou não, é expressamente proibido, assim que é permitido o fork do Codigo Fonte para sugestão de Pull-Requests ou do mesmo. <br><br>
+         <a href="https://github.com/solarQuiz.github.io/">Codigo Fonte</a></p>
+      <button class="menu-button" id="back-from-about">VOLTA AO MENU</button>
+    </section>
+
+    <section id="results-container">
+      <h1 class="finishQuiz">Quiz Finalizado!</h1>
+      <p>Sua pontuação: <b><span id="final-score"></span> / <span id="total-questions-results"></span></b></p>
+      <p id="result-message"></p>
+      <button id="restart-btn">Voltar ao menu</button>
+    </section>
+  </div>
+  <script src="javascriptFiles/backgroundJS/stars.js"></script>
+
+  <script src="javascriptFiles/logicBackend/timer.js"></script>
+  <script src="javascriptFiles/logicBackend/question.js"></script>
+  <script src="javascriptFiles/logicBackend/results.js"></script>
+  <script src="javascriptFiles/logicBackend/Audio.js"></script>
+
+  <script src="javascriptFiles/questions/questionsArray.js"></script>
+  <script src="javascriptFiles/questions/15/questions15.js"></script>
+  <script src="javascriptFiles/questions/67/questions67.js"></script>
+  <script src="javascriptFiles/questions/89/questions89.js"></script>
+
+  <script src="javascriptFiles/variables.js"></script>
+  <script src="javascriptFiles/menu.js"></script>
+  <script src="javascriptFiles/eventListeners.js"></script>
+  <script src="javascriptFiles/main.js"></script>
+</body>
+</html>

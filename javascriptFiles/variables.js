@@ -1,0 +1,38 @@
+let questions = [];
+let currentQuestion = 0;
+let score = 0;
+let selectedOption = null;
+let timer;
+let timeLeft = 30;
+let funFactLocked = false;
+let giveUpTimer;
+
+const menu = document.getElementById('menu');
+const playBtn = document.getElementById('play-btn');
+const aboutBtn = document.getElementById('about-btn');
+const questBtn = document.getElementById('quest-btn');
+const aboutSection = document.getElementById('about');
+const questSection = document.getElementById('questions-menu');
+const backFromAbout = document.getElementById('back-from-about');
+const quizContainer = document.getElementById('quiz-container');
+const timerEl = document.getElementById('timer');
+const questionContainer = document.getElementById('question-container');
+const optionsContainer = document.getElementById('options-container');
+const nextBtn = document.getElementById('next-btn');
+const funFactEl = document.getElementById('fun-fact');
+const resultsContainer = document.getElementById('results-container');
+const finalScoreEl = document.getElementById('final-score');
+const totalQuestionsResults = document.getElementById('total-questions-results');
+const resultMessage = document.getElementById('result-message');
+const restartBtn = document.getElementById('restart-btn');
+const currentQuestionEl = document.getElementById('current-question');
+const totalQuestionsEl = document.getElementById('total-questions');
+const quest15 = document.getElementById("1-5");
+const quest67 = document.getElementById("6-7");
+const quest89 = document.getElementById("8-9");
+const skipBtn = document.querySelector('.skip');
+const giveUpBtn = document.querySelector('.give-up');
+
+let Correct = new Audio('assets/audio/Correct.mp3');
+let Incorrect = new Audio('assets/audio/Incorrect.mp3');
+let Tap = new Audio('assets/audio/Tap.mp3');
