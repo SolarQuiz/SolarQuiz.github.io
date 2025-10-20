@@ -108,20 +108,14 @@
     let pressTimer;
   
     el.addEventListener('touchstart', (e) => {
-      e.preventDefault();
       pressTimer = setTimeout(() => {
          Menu();
          playAudio(Incorrect);
       }, 5000);
     });
   
-    el.addEventListener('touchend', () => {
-      clearTimeout(pressTimer);
-    });
-  
-    el.addEventListener('contextmenu', (e) => e.preventDefault());
+   el.addEventListener('touchend', () => clearTimeout(pressTimer));
+   el.addEventListener('contextmenu', (e) => e.preventDefault());
   </script>
-
 </body>
-
 </html>
