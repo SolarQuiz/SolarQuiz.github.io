@@ -104,18 +104,16 @@
   <script src="javascriptFiles/main.js"></script>
   
   <script>
+    const isAndroid = /Android/i.test(navigator.userAgent);
     const el = document.querySelector('.give-up');
-    let pressTimer;
   
-    el.addEventListener('touchstart', (e) => {
-      pressTimer = setTimeout(() => {
-         Menu();
-         playAudio(Incorrect);
-      }, 5000);
-    });
-  
-   el.addEventListener('touchend', () => clearTimeout(pressTimer));
-   el.addEventListener('contextmenu', (e) => e.preventDefault());
+    if (isAndroid) {
+      el.addEventListener('touchstart', () => {
+        Menu();
+        playAudio(Incorrect);
+      });
+    } 
   </script>
 </body>
 </html>
+
