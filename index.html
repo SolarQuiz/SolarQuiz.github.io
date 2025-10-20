@@ -102,5 +102,26 @@
   <script src="javascriptFiles/menu.js"></script>
   <script src="javascriptFiles/eventListeners.js"></script>
   <script src="javascriptFiles/main.js"></script>
+  
+  <script>
+    const el = document.querySelector('.give-up');
+    let pressTimer;
+  
+    el.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      pressTimer = setTimeout(() => {
+         Menu();
+         playAudio(Incorrect);
+      }, 5000);
+    });
+  
+    el.addEventListener('touchend', () => {
+      clearTimeout(pressTimer);
+    });
+  
+    el.addEventListener('contextmenu', (e) => e.preventDefault());
+  </script>
+
 </body>
+
 </html>
